@@ -1,0 +1,10 @@
+{
+    "reqmanApp": {
+        "RMRequirementScope" : {
+            "null": "",
+            "REQUIRED": "REQUIRED",
+            "NICETOHAVE": "NICETOHAVE",
+            "OPTIONAL": "OPTIONAL"
+        }
+    }
+}

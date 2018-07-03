@@ -1,0 +1,10 @@
+{
+    "reqmanApp": {
+        "RMTagType" : {
+            "null": "",
+            "GENERATED": "GENERATED",
+            "MANUAL": "MANUAL",
+            "LOCKED": "LOCKED"
+        }
+    }
+}

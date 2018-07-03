@@ -1,0 +1,24 @@
+
+{
+    "reqmanApp": {
+        "rMCategory" : {
+            "home": {
+                "title": "RM Categories",
+                "createLabel": "Create a new RM Category",
+                "createOrEditLabel": "Create or edit a RM Category",
+                "search": "Search for RM Category"
+            },
+            "created": "A new RM Category is created with identifier {{ param }}",
+            "updated": "A RM Category is updated with identifier {{ param }}",
+            "deleted": "A RM Category is deleted with identifier {{ param }}",
+            "delete": {
+                "question": "Are you sure you want to delete RM Category {{ id }}?"
+            },
+            "detail": {
+                "title": "RM Category"
+            },
+            "name": "Name",
+            "name": "Name"
+        }
+    }
+}

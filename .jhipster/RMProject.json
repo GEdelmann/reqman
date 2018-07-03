@@ -1,0 +1,26 @@
+{
+    "name": "RMProject",
+    "fields": [
+        {
+            "fieldName": "name",
+            "fieldType": "String"
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "one-to-many",
+            "relationshipName": "requirements",
+            "otherEntityName": "rMRequirement",
+            "otherEntityRelationshipName": "project"
+        }
+    ],
+    "changelogDate": "20180703123153",
+    "entityTableName": "rm_project",
+    "dto": "mapstruct",
+    "pagination": "infinite-scroll",
+    "service": "serviceImpl",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "clientRootFolder": "",
+    "applications": "*"
+}

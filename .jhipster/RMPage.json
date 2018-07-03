@@ -1,0 +1,30 @@
+{
+    "name": "RMPage",
+    "fields": [
+        {
+            "fieldName": "name",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "description",
+            "fieldType": "String"
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "one-to-many",
+            "relationshipName": "attachements",
+            "otherEntityName": "rMAttachement",
+            "otherEntityRelationshipName": "rMPage"
+        }
+    ],
+    "changelogDate": "20180703123152",
+    "entityTableName": "rm_page",
+    "dto": "mapstruct",
+    "pagination": "no",
+    "service": "serviceImpl",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "clientRootFolder": "",
+    "applications": "*"
+}

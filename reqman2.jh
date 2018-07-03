@@ -1,0 +1,73 @@
+enum RMRequirementType {
+	BUSINESS, TECHNICAL
+}
+
+enum RMRequirementScope {
+	REQUIRED, NICETOHAVE, OPTIONAL
+}
+entity RMRequirement {
+	functionalID String required,
+    headline String,
+	description String
+    generalNote String,
+    technicalNotes String,
+    scope RMRequirementScope,
+    type RMRequirementType
+}
+
+entity RMTag {
+	name String,
+	type RMTagType
+}
+
+enum RMTagType {
+    GENERATED, MANUAL, LOCKED
+}
+
+entity RMCategory {
+	name String
+}
+
+entity RMPage {
+	name String,
+	description String
+}
+
+entity RMProject {
+	name String
+}
+
+entity RMAttachement {
+	name String,
+    mimeType String,
+    content Blob
+}
+
+
+
+relationship ManyToMany {
+	RMTag{name} to RMRequirement{tags},
+
+    RMCategory{name} to RMRequirement{categories}
+}
+
+// defining multiple OneToMany relationships with comments
+relationship OneToMany {
+	RMRequirement{attachements} to RMAttachement,
+
+    RMPage{attachements} to RMAttachement
+}
+
+relationship ManyToOne {
+	RMRequirement{project} to RMProject{requirements}
+}
+
+
+// Set pagination options
+paginate RMRequirement, RMProject with infinite-scroll
+paginate RMAttachement with pagination
+
+dto * with mapstruct
+
+// Set service options to all except few
+service all with serviceImpl except RMCategory, RMTagType

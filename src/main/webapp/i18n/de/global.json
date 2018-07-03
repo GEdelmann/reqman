@@ -7,6 +7,12 @@
             "jhipster-needle-menu-add-element": "JHipster will add additional menu entries here (do not translate!)",
             "entities": {
                 "main": "Entitäten",
+                "rmRequirement": "RM Requirement",
+                "rmTag": "RM Tag",
+                "rmCategory": "RM Category",
+                "rmPage": "RM Page",
+                "rmProject": "RM Project",
+                "rmAttachement": "RM Attachement",
                 "jhipster-needle-menu-add-entry": "JHipster will add additional entities here (do not translate!)"
             },
             "account": {

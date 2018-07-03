@@ -1,0 +1,57 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="rMRequirement">
+            <h2><span jhiTranslate="reqmanApp.rMRequirement.detail.title">RM Requirement</span> {{rMRequirement.id}}</h2>
+            <hr>
+            <-alert-error></-alert-error>
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="reqmanApp.rMRequirement.functionalID">Functional ID</span></dt>
+                <dd>
+                    <span>{{rMRequirement.functionalID}}</span>
+                </dd>
+                <dt><span jhiTranslate="reqmanApp.rMRequirement.headline">Headline</span></dt>
+                <dd>
+                    <span>{{rMRequirement.headline}}</span>
+                </dd>
+                <dt><span jhiTranslate="reqmanApp.rMRequirement.description">Description</span></dt>
+                <dd>
+                    <span>{{rMRequirement.description}}</span>
+                </dd>
+                <dt><span jhiTranslate="reqmanApp.rMRequirement.generalNote">General Note</span></dt>
+                <dd>
+                    <span>{{rMRequirement.generalNote}}</span>
+                </dd>
+                <dt><span jhiTranslate="reqmanApp.rMRequirement.technicalNotes">Technical Notes</span></dt>
+                <dd>
+                    <span>{{rMRequirement.technicalNotes}}</span>
+                </dd>
+                <dt><span jhiTranslate="reqmanApp.rMRequirement.scope">Scope</span></dt>
+                <dd>
+                    <span jhiTranslate="{{'reqmanApp.RMRequirementScope.' + rMRequirement.scope}}">{{rMRequirement.scope}}</span>
+                </dd>
+                <dt><span jhiTranslate="reqmanApp.rMRequirement.type">Type</span></dt>
+                <dd>
+                    <span jhiTranslate="{{'reqmanApp.RMRequirementType.' + rMRequirement.type}}">{{rMRequirement.type}}</span>
+                </dd>
+                <dt><span jhiTranslate="reqmanApp.rMRequirement.project">Project</span></dt>
+                <dd>
+                    <div *ngIf="rMRequirement.projectId">
+                        <a [routerLink]="['/rm-project', rMRequirement.projectId, 'view']">{{rMRequirement.projectId}}</a>
+                    </div>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon [icon]="'arrow-left'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/rm-requirement', rMRequirement.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon [icon]="'pencil-alt'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

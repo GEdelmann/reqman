@@ -1,0 +1,27 @@
+
+{
+    "reqmanApp": {
+        "rMAttachement" : {
+            "home": {
+                "title": "RM Attachements",
+                "createLabel": "RM Attachement erstellen",
+                "createOrEditLabel": "RM Attachement erstellen oder bearbeiten",
+                "search": "Suche nach RM Attachement"
+            },
+            "created": "RM Attachement erstellt mit ID {{ param }}",
+            "updated": "RM Attachement aktualisiert mit ID {{ param }}",
+            "deleted": "RM Attachement gelöscht mit ID {{ param }}",
+            "delete": {
+                "question": "Soll RM Attachement {{ id }} wirklich dauerhaft gelöscht werden?"
+            },
+            "detail": {
+                "title": "RM Attachement"
+            },
+            "name": "Name",
+            "mimeType": "Mime Type",
+            "content": "Content",
+            "rMRequirement": "R M Requirement",
+            "rMPage": "R M Page"
+        }
+    }
+}

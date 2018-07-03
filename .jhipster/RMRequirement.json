@@ -1,0 +1,75 @@
+{
+    "name": "RMRequirement",
+    "fields": [
+        {
+            "fieldName": "functionalID",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "headline",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "description",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "generalNote",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "technicalNotes",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "scope",
+            "fieldType": "RMRequirementScope",
+            "fieldValues": "REQUIRED,NICETOHAVE,OPTIONAL"
+        },
+        {
+            "fieldName": "type",
+            "fieldType": "RMRequirementType",
+            "fieldValues": "BUSINESS,TECHNICAL"
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "one-to-many",
+            "relationshipName": "attachements",
+            "otherEntityName": "rMAttachement",
+            "otherEntityRelationshipName": "rMRequirement"
+        },
+        {
+            "relationshipType": "many-to-one",
+            "relationshipName": "project",
+            "otherEntityName": "rMProject",
+            "otherEntityField": "id"
+        },
+        {
+            "relationshipType": "many-to-many",
+            "relationshipName": "tags",
+            "otherEntityName": "rMTag",
+            "ownerSide": false,
+            "otherEntityRelationshipName": "name"
+        },
+        {
+            "relationshipType": "many-to-many",
+            "relationshipName": "categories",
+            "otherEntityName": "rMCategory",
+            "ownerSide": false,
+            "otherEntityRelationshipName": "name"
+        }
+    ],
+    "changelogDate": "20180703123149",
+    "entityTableName": "rm_requirement",
+    "dto": "mapstruct",
+    "pagination": "infinite-scroll",
+    "service": "serviceImpl",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "clientRootFolder": "",
+    "applications": "*"
+}

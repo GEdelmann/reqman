@@ -1,0 +1,50 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="rMAttachement">
+            <h2><span jhiTranslate="reqmanApp.rMAttachement.detail.title">RM Attachement</span> {{rMAttachement.id}}</h2>
+            <hr>
+            <-alert-error></-alert-error>
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="reqmanApp.rMAttachement.name">Name</span></dt>
+                <dd>
+                    <span>{{rMAttachement.name}}</span>
+                </dd>
+                <dt><span jhiTranslate="reqmanApp.rMAttachement.mimeType">Mime Type</span></dt>
+                <dd>
+                    <span>{{rMAttachement.mimeType}}</span>
+                </dd>
+                <dt><span jhiTranslate="reqmanApp.rMAttachement.content">Content</span></dt>
+                <dd>
+                    <div *ngIf="rMAttachement.content">
+                        <a (click)="openFile(rMAttachement.contentContentType, rMAttachement.content)" jhiTranslate="entity.action.open">open</a>
+                        {{rMAttachement.contentContentType}}, {{byteSize(rMAttachement.content)}}
+                    </div>
+                </dd>
+                <dt><span jhiTranslate="reqmanApp.rMAttachement.rMRequirement">R M Requirement</span></dt>
+                <dd>
+                    <div *ngIf="rMAttachement.rMRequirementId">
+                        <a [routerLink]="['/rm-requirement', rMAttachement.rMRequirementId, 'view']">{{rMAttachement.rMRequirementId}}</a>
+                    </div>
+                </dd>
+                <dt><span jhiTranslate="reqmanApp.rMAttachement.rMPage">R M Page</span></dt>
+                <dd>
+                    <div *ngIf="rMAttachement.rMPageId">
+                        <a [routerLink]="['/rm-page', rMAttachement.rMPageId, 'view']">{{rMAttachement.rMPageId}}</a>
+                    </div>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon [icon]="'arrow-left'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/rm-attachement', rMAttachement.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon [icon]="'pencil-alt'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

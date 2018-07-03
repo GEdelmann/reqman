@@ -1,0 +1,9 @@
+{
+    "reqmanApp": {
+        "RMRequirementType" : {
+            "null": "",
+            "BUSINESS": "BUSINESS",
+            "TECHNICAL": "TECHNICAL"
+        }
+    }
+}

@@ -1,0 +1,25 @@
+
+{
+    "reqmanApp": {
+        "rMTag" : {
+            "home": {
+                "title": "RM Tags",
+                "createLabel": "Create a new RM Tag",
+                "createOrEditLabel": "Create or edit a RM Tag",
+                "search": "Search for RM Tag"
+            },
+            "created": "A new RM Tag is created with identifier {{ param }}",
+            "updated": "A RM Tag is updated with identifier {{ param }}",
+            "deleted": "A RM Tag is deleted with identifier {{ param }}",
+            "delete": {
+                "question": "Are you sure you want to delete RM Tag {{ id }}?"
+            },
+            "detail": {
+                "title": "RM Tag"
+            },
+            "name": "Name",
+            "type": "Type",
+            "name": "Name"
+        }
+    }
+}

@@ -1,0 +1,27 @@
+
+{
+    "reqmanApp": {
+        "rMAttachement" : {
+            "home": {
+                "title": "RM Attachements",
+                "createLabel": "Create a new RM Attachement",
+                "createOrEditLabel": "Create or edit a RM Attachement",
+                "search": "Search for RM Attachement"
+            },
+            "created": "A new RM Attachement is created with identifier {{ param }}",
+            "updated": "A RM Attachement is updated with identifier {{ param }}",
+            "deleted": "A RM Attachement is deleted with identifier {{ param }}",
+            "delete": {
+                "question": "Are you sure you want to delete RM Attachement {{ id }}?"
+            },
+            "detail": {
+                "title": "RM Attachement"
+            },
+            "name": "Name",
+            "mimeType": "Mime Type",
+            "content": "Content",
+            "rMRequirement": "R M Requirement",
+            "rMPage": "R M Page"
+        }
+    }
+}

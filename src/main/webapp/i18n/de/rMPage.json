@@ -1,0 +1,25 @@
+
+{
+    "reqmanApp": {
+        "rMPage" : {
+            "home": {
+                "title": "RM Pages",
+                "createLabel": "RM Page erstellen",
+                "createOrEditLabel": "RM Page erstellen oder bearbeiten",
+                "search": "Suche nach RM Page"
+            },
+            "created": "RM Page erstellt mit ID {{ param }}",
+            "updated": "RM Page aktualisiert mit ID {{ param }}",
+            "deleted": "RM Page gelöscht mit ID {{ param }}",
+            "delete": {
+                "question": "Soll RM Page {{ id }} wirklich dauerhaft gelöscht werden?"
+            },
+            "detail": {
+                "title": "RM Page"
+            },
+            "name": "Name",
+            "description": "Description",
+            "attachements": "Attachements"
+        }
+    }
+}

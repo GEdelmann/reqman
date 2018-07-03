@@ -1,0 +1,77 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <form name="editForm" role="form" novalidate (ngSubmit)="save()" #editForm="ngForm">
+            <h2 id="-rm-requirement-heading" jhiTranslate="reqmanApp.rMRequirement.home.createOrEditLabel">Create or edit a RM Requirement</h2>
+            <div>
+                <-alert-error></-alert-error>
+                <div class="form-group" [hidden]="!rMRequirement.id">
+                    <label for="id" jhiTranslate="global.field.id">ID</label>
+                    <input type="text" class="form-control" id="id" name="id"
+                        [(ngModel)]="rMRequirement.id" readonly />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="reqmanApp.rMRequirement.functionalID" for="field_functionalID">Functional ID</label>
+                    <input type="text" class="form-control" name="functionalID" id="field_functionalID"
+                        [(ngModel)]="rMRequirement.functionalID" required/>
+                    <div [hidden]="!(editForm.controls.functionalID?.dirty && editForm.controls.functionalID?.invalid)">
+                        <small class="form-text text-danger"
+                        [hidden]="!editForm.controls.functionalID?.errors?.required" jhiTranslate="entity.validation.required">
+                        This field is required.
+                        </small>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="reqmanApp.rMRequirement.headline" for="field_headline">Headline</label>
+                    <input type="text" class="form-control" name="headline" id="field_headline"
+                        [(ngModel)]="rMRequirement.headline" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="reqmanApp.rMRequirement.description" for="field_description">Description</label>
+                    <input type="text" class="form-control" name="description" id="field_description"
+                        [(ngModel)]="rMRequirement.description" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="reqmanApp.rMRequirement.generalNote" for="field_generalNote">General Note</label>
+                    <input type="text" class="form-control" name="generalNote" id="field_generalNote"
+                        [(ngModel)]="rMRequirement.generalNote" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="reqmanApp.rMRequirement.technicalNotes" for="field_technicalNotes">Technical Notes</label>
+                    <input type="text" class="form-control" name="technicalNotes" id="field_technicalNotes"
+                        [(ngModel)]="rMRequirement.technicalNotes" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="reqmanApp.rMRequirement.scope" for="field_scope">Scope</label>
+                    <select class="form-control" name="scope" [(ngModel)]="rMRequirement.scope" id="field_scope" >
+                        <option value="REQUIRED">{{'reqmanApp.RMRequirementScope.REQUIRED' | translate}}</option>
+                        <option value="NICETOHAVE">{{'reqmanApp.RMRequirementScope.NICETOHAVE' | translate}}</option>
+                        <option value="OPTIONAL">{{'reqmanApp.RMRequirementScope.OPTIONAL' | translate}}</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="reqmanApp.rMRequirement.type" for="field_type">Type</label>
+                    <select class="form-control" name="type" [(ngModel)]="rMRequirement.type" id="field_type" >
+                        <option value="BUSINESS">{{'reqmanApp.RMRequirementType.BUSINESS' | translate}}</option>
+                        <option value="TECHNICAL">{{'reqmanApp.RMRequirementType.TECHNICAL' | translate}}</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="reqmanApp.rMRequirement.project" for="field_project">Project</label>
+                    <select class="form-control" id="field_project" name="project" [(ngModel)]="rMRequirement.projectId" >
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="rMProjectOption.id" *ngFor="let rMProjectOption of rmprojects; trackBy: trackRMProjectById">{{rMProjectOption.id}}</option>
+                    </select>
+                </div>
+            </div>
+            <div>
+                <button type="button" id="cancel-save" class="btn btn-secondary"  (click)="previousState()">
+                    <fa-icon [icon]="'ban'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+                </button>
+                <button type="submit" id="save-entity" [disabled]="editForm.form.invalid || isSaving" class="btn btn-primary">
+                    <fa-icon [icon]="'save'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+                </button>
+            </div>
+        </form>
+    </div>
+</div>

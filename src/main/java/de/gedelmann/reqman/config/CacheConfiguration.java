@@ -38,6 +38,19 @@ public class CacheConfiguration {
             cm.createCache(de.gedelmann.reqman.domain.User.class.getName(), jcacheConfiguration);
             cm.createCache(de.gedelmann.reqman.domain.Authority.class.getName(), jcacheConfiguration);
             cm.createCache(de.gedelmann.reqman.domain.User.class.getName() + ".authorities", jcacheConfiguration);
+            cm.createCache(de.gedelmann.reqman.domain.RMRequirement.class.getName(), jcacheConfiguration);
+            cm.createCache(de.gedelmann.reqman.domain.RMRequirement.class.getName() + ".attachements", jcacheConfiguration);
+            cm.createCache(de.gedelmann.reqman.domain.RMRequirement.class.getName() + ".tags", jcacheConfiguration);
+            cm.createCache(de.gedelmann.reqman.domain.RMRequirement.class.getName() + ".categories", jcacheConfiguration);
+            cm.createCache(de.gedelmann.reqman.domain.RMTag.class.getName(), jcacheConfiguration);
+            cm.createCache(de.gedelmann.reqman.domain.RMTag.class.getName() + ".names", jcacheConfiguration);
+            cm.createCache(de.gedelmann.reqman.domain.RMCategory.class.getName(), jcacheConfiguration);
+            cm.createCache(de.gedelmann.reqman.domain.RMCategory.class.getName() + ".names", jcacheConfiguration);
+            cm.createCache(de.gedelmann.reqman.domain.RMPage.class.getName(), jcacheConfiguration);
+            cm.createCache(de.gedelmann.reqman.domain.RMPage.class.getName() + ".attachements", jcacheConfiguration);
+            cm.createCache(de.gedelmann.reqman.domain.RMProject.class.getName(), jcacheConfiguration);
+            cm.createCache(de.gedelmann.reqman.domain.RMProject.class.getName() + ".requirements", jcacheConfiguration);
+            cm.createCache(de.gedelmann.reqman.domain.RMAttachement.class.getName(), jcacheConfiguration);
             // jhipster-needle-ehcache-add-entry
         };
     }

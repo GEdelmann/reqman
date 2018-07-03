@@ -1,0 +1,25 @@
+
+{
+    "reqmanApp": {
+        "rMTag" : {
+            "home": {
+                "title": "RM Tags",
+                "createLabel": "RM Tag erstellen",
+                "createOrEditLabel": "RM Tag erstellen oder bearbeiten",
+                "search": "Suche nach RM Tag"
+            },
+            "created": "RM Tag erstellt mit ID {{ param }}",
+            "updated": "RM Tag aktualisiert mit ID {{ param }}",
+            "deleted": "RM Tag gelöscht mit ID {{ param }}",
+            "delete": {
+                "question": "Soll RM Tag {{ id }} wirklich dauerhaft gelöscht werden?"
+            },
+            "detail": {
+                "title": "RM Tag"
+            },
+            "name": "Name",
+            "type": "Type",
+            "name": "Name"
+        }
+    }
+}

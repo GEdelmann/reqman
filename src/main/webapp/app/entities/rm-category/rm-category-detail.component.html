@@ -1,0 +1,33 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="rMCategory">
+            <h2><span jhiTranslate="reqmanApp.rMCategory.detail.title">RM Category</span> {{rMCategory.id}}</h2>
+            <hr>
+            <-alert-error></-alert-error>
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="reqmanApp.rMCategory.name">Name</span></dt>
+                <dd>
+                    <span>{{rMCategory.name}}</span>
+                </dd>
+                <dt><span jhiTranslate="reqmanApp.rMCategory.name">Name</span></dt>
+                <dd>
+                    <span *ngFor="let name of rMCategory.names; let last = last">
+                        <a [routerLink]="['/rm-requirement', name?.id, 'view' ]">{{name.id}}</a>{{last ? '' : ', '}}
+                    </span>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon [icon]="'arrow-left'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/rm-category', rMCategory.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon [icon]="'pencil-alt'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

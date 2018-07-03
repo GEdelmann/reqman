@@ -1,0 +1,33 @@
+
+{
+    "reqmanApp": {
+        "rMRequirement" : {
+            "home": {
+                "title": "RM Requirements",
+                "createLabel": "Create a new RM Requirement",
+                "createOrEditLabel": "Create or edit a RM Requirement",
+                "search": "Search for RM Requirement"
+            },
+            "created": "A new RM Requirement is created with identifier {{ param }}",
+            "updated": "A RM Requirement is updated with identifier {{ param }}",
+            "deleted": "A RM Requirement is deleted with identifier {{ param }}",
+            "delete": {
+                "question": "Are you sure you want to delete RM Requirement {{ id }}?"
+            },
+            "detail": {
+                "title": "RM Requirement"
+            },
+            "functionalID": "Functional ID",
+            "headline": "Headline",
+            "description": "Description",
+            "generalNote": "General Note",
+            "technicalNotes": "Technical Notes",
+            "scope": "Scope",
+            "type": "Type",
+            "attachements": "Attachements",
+            "project": "Project",
+            "tags": "Tags",
+            "categories": "Categories"
+        }
+    }
+}

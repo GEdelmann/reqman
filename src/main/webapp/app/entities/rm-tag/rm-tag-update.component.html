@@ -1,0 +1,43 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <form name="editForm" role="form" novalidate (ngSubmit)="save()" #editForm="ngForm">
+            <h2 id="-rm-tag-heading" jhiTranslate="reqmanApp.rMTag.home.createOrEditLabel">Create or edit a RM Tag</h2>
+            <div>
+                <-alert-error></-alert-error>
+                <div class="form-group" [hidden]="!rMTag.id">
+                    <label for="id" jhiTranslate="global.field.id">ID</label>
+                    <input type="text" class="form-control" id="id" name="id"
+                        [(ngModel)]="rMTag.id" readonly />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="reqmanApp.rMTag.name" for="field_name">Name</label>
+                    <input type="text" class="form-control" name="name" id="field_name"
+                        [(ngModel)]="rMTag.name" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="reqmanApp.rMTag.type" for="field_type">Type</label>
+                    <select class="form-control" name="type" [(ngModel)]="rMTag.type" id="field_type" >
+                        <option value="GENERATED">{{'reqmanApp.RMTagType.GENERATED' | translate}}</option>
+                        <option value="MANUAL">{{'reqmanApp.RMTagType.MANUAL' | translate}}</option>
+                        <option value="LOCKED">{{'reqmanApp.RMTagType.LOCKED' | translate}}</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label jhiTranslate="reqmanApp.rMTag.name" for="field_name">Name</label>
+                    <select class="form-control" id="field_name" multiple name="name" [(ngModel)]="rMTag.names">
+                        <option [ngValue]="getSelected(rMTag.names, rMRequirementOption)" *ngFor="let rMRequirementOption of rmrequirements; trackBy: trackRMRequirementById">{{rMRequirementOption.id}}</option>
+                    </select>
+                </div>
+            </div>
+            <div>
+                <button type="button" id="cancel-save" class="btn btn-secondary"  (click)="previousState()">
+                    <fa-icon [icon]="'ban'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+                </button>
+                <button type="submit" id="save-entity" [disabled]="editForm.form.invalid || isSaving" class="btn btn-primary">
+                    <fa-icon [icon]="'save'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+                </button>
+            </div>
+        </form>
+    </div>
+</div>
